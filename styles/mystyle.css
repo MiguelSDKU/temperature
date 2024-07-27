@@ -1,0 +1,12 @@
+/* Body */
+
+.products {
+  background-color: gray;
+  text-align: center;
+  padding: 2dvh;
+  margin-right: 20%;
+  margin-left: 20%;
+  font-size: large;
+  border: 5px dotted black;
+  margin-bottom: 1dvh;
+}
