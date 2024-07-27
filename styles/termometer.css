@@ -1,0 +1,61 @@
+/* Global */
+* {
+  text-align: center;
+}
+
+/* Main */
+
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+/* Body */
+.emojis {
+  font-size: 175px;
+}
+
+.conversion {
+  margin-top: 1dvh;
+  font-size: 3dvh;
+}
+
+.temperatura {
+  width: 15dvh;
+  height: 700px;
+  border: 2px solid #000;
+  border-radius: 10px;
+  margin-top: 10dvh;
+  position: relative;
+  margin-left: 30dvh;
+}
+
+.temperatura .level {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  border-radius: 10px 10px 0 0;
+}
+
+.low {
+  background-color: blue;
+}
+
+.moderate {
+  background-color: green;
+}
+
+.high {
+  background-color: yellow;
+}
+
+.very-high {
+  background-color: red;
+}
+
+.button {
+  padding: 3dvh;
+  font-size: large;
+  padding-left: 25dvh;
+  padding-right: 25dvh;
+}
