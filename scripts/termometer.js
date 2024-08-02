@@ -8,7 +8,7 @@ function conversion() {
   );
 
   if (selection == 1) {
-    var fahrenheit = Number(prompt("What's the temperatue?"));
+    var fahrenheit = Number(prompt("What's the temperature?"));
     var celsius_conversion = ((fahrenheit - 32) * 5) / 9;
     document.getElementById("results").innerHTML = `
     <div class="results">  
@@ -17,7 +17,7 @@ function conversion() {
       `;
     updateThermometer2(celsius_conversion);
   } else if (selection == 2) {
-    var celsius = Number(prompt("What's the temperatue?"));
+    var celsius = Number(prompt("What's the temperature?"));
     var fahrenheit_conversion = (celsius * 9) / 5 + 32;
     document.getElementById("results").innerHTML = `
     <div class="results">  
@@ -32,6 +32,48 @@ function conversion() {
     </div>
       `;
   }
+}
+
+function rangeConversion() {
+  var start = Number(prompt("Enter the starting temperature in Celsius:"));
+  var end = Number(prompt("Enter the ending temperature in Celsius:"));
+
+  if (isNaN(start) || isNaN(end) || start > end) {
+    document.getElementById("results").innerHTML = `
+    <div class="results">  
+    <p>Please enter valid start and end temperatures, with start <= end.</p>
+    </div>
+    `;
+    return;
+  }
+
+  var table = `
+    <table>
+      <thead>
+        <tr>
+          <th>Celsius</th>
+          <th>Fahrenheit</th>
+        </tr>
+      </thead>
+      <tbody>
+  `;
+
+  for (var celsius = start; celsius <= end; celsius++) {
+    var fahrenheit = (celsius * 9) / 5 + 32;
+    table += `
+      <tr>
+        <td>${celsius}</td>
+        <td>${fahrenheit.toFixed(1)}</td>
+      </tr>
+    `;
+  }
+
+  table += `
+      </tbody>
+    </table>
+  `;
+
+  document.getElementById("results").innerHTML = table;
 }
 
 function updateThermometer(temp) {
